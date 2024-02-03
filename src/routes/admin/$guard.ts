@@ -1,4 +1,3 @@
-import { Session } from "@auth/core/types";
 import { LookupHookResult, PageRouteGuardContext } from "rakkasjs";
 
 export function pageGuard(ctx: PageRouteGuardContext): LookupHookResult {
