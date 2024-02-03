@@ -1,11 +1,5 @@
-import { RequestContext, createRequestHandler } from "rakkasjs";
-import {
-  MutationCache,
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-import { uneval } from "devalue";
+import { RequestContext } from "rakkasjs";
+import { createRequestHandler } from "rakkasjs/server";
 import { cookie } from "@hattip/cookie";
 
 
@@ -22,17 +16,10 @@ export default createRequestHandler({
   },
 
   createPageHooks(requestContext) {
-    let queries = Object.create(null);
+
     return {
       emitBeforeSsrChunk() {
-        if (Object.keys(queries).length === 0) return "";
-
-        // Emit a script that calls the global $TQS function with the
-        // newly fetched query data.
-
-        const queriesString = uneval(queries);
-        queries = Object.create(null);
-        return `<script>$TQS(${queriesString})</script>`;
+      return ``;
       },
 
       emitToDocumentHead() {
@@ -44,7 +31,7 @@ export default createRequestHandler({
         document.documentElement.setAttribute("data-theme", "${cookie_theme}");
       })();
      </script>
-     <script>$TQD=Object.create(null);$TQS=data=>Object.assign($TQD,data);</script>
+   
   `;
       },
 
@@ -54,50 +41,12 @@ export default createRequestHandler({
       },
 
       wrapApp(app) {
-        const queryCache = new QueryCache({
-          onSuccess(data, query) {
-            queries[query.queryHash] = data;
-          },
-        });
-
-        const queryClient:QueryClient = new QueryClient({
-          mutationCache: new MutationCache({
-            onSuccess: async (data, variable, context, mutation) => {
-              if (Array.isArray(mutation.meta?.invalidates)) {
-                return queryClient.invalidateQueries({
-                  queryKey: mutation.meta?.invalidates,
-                });
-              }
-            },
-          }),
-          queryCache,
-          defaultOptions: {
-            queries: {
-              staleTime: Infinity,
-              refetchOnWindowFocus: false,
-              refetchOnReconnect: false,
-            },
-          },
-        });
-
         return (
-          <QueryClientProvider client={queryClient}>{app}</QueryClientProvider>
+          app
         );
       },
 
-      //   wrapSsrStream(stream) {
-      //     const { readable, writable } = new TransformStream({
-      //       transform(chunk, controller) {
-      //         // You can transform the chunks of the
-      //         // React SSR stream here.
-      //         controller.enqueue(chunk);
-      //       },
-      //     });
-      // // @ts-expect-error
-      //     stream.pipeThrough(writable);
 
-      //     return readable;
-      //   },
     };
   },
 });
