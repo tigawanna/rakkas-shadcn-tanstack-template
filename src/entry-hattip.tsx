@@ -1,25 +1,19 @@
-import { RequestContext } from "rakkasjs";
+
 import { createRequestHandler } from "rakkasjs/server";
 import { cookie } from "@hattip/cookie";
 
-
-export async function beforePageLuciaMiddleware(ctx: RequestContext<unknown>) {}
-
 export default createRequestHandler({
   middleware: {
-    beforePages: [
-      cookie(),
- 
-    ],
+    beforePages: [],
     beforeApiRoutes: [],
     beforeNotFound: [],
+    beforeAll: [cookie()],
   },
 
   createPageHooks(requestContext) {
-
     return {
       emitBeforeSsrChunk() {
-      return ``;
+        return ``;
       },
 
       emitToDocumentHead() {
@@ -35,18 +29,13 @@ export default createRequestHandler({
   `;
       },
 
-      async extendPageContext(ctx) {
-        const request = ctx.requestContext?.request;
-        if (!request) return;
+      async extendPageContext(pageContext) {
+
       },
 
       wrapApp(app) {
-        return (
-          app
-        );
+        return app;
       },
-
-
     };
   },
 });

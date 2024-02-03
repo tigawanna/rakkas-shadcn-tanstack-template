@@ -37,6 +37,7 @@
     "vitest": "^1.2.2"
   },
   "dependencies": {
+    "@auth/core": "^0.25.0",
     "@hattip/cookie": "^0.0.41",
     "@hattip/response": "^0.0.41",
     "@hookform/resolvers": "^3.3.4",

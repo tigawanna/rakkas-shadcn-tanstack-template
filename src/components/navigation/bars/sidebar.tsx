@@ -1,11 +1,15 @@
 import { Link } from "rakkasjs";
-import { Home } from "lucide-react";
+import { Home, Lock } from "lucide-react";
 import { MiniSettingsModal } from "../mini-settings/MiniSettings";
 
 interface SidebarProps {}
 
 export function Sidebar({}: SidebarProps) {
-  const routes = [{ name: "home", url: "/", icon: <Home /> }];
+  const routes = [
+    { name: "home", url: "/", icon: <Home /> },
+    { name: "admin", url: "/admin", icon: <Lock /> },
+  ]
+  ;
   return (
     <header
       className="sticky top-0 min-h-[99vh]  flex flex-col  justify-between items-center bg-base-300  

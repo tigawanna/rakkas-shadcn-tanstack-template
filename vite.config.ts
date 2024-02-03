@@ -7,9 +7,9 @@ const env = loadEnv("", process.cwd(), "");
 Object.assign(process.env, env);
 
 export default defineConfig({
-  // ssr: {
-  //   external: ["@auth/core", "rakkasjs/node-adapter"],
-  // },
+  ssr: {
+    external: ["@auth/core", "rakkasjs/node-adapter"],
+  },
   plugins: [tsconfigPaths(), react(), rakkas({})],
   server: {
     port: 3000,
