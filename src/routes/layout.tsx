@@ -48,6 +48,18 @@ function Layout({ children }: LayoutProps) {
 }
 
 Layout.preload = (ctx: PreloadContext) => {
+  const redirect_to = ctx.queryClient.getQueryData("return_to");
+  if (!(redirect_to == null)) {
+    const new_url = new URL(ctx.url);
+    new_url.pathname = redirect_to;
+    ctx.queryClient.setQueryData("return_to", null);
+    return {
+      redirect: {
+        href: new_url.toString(),
+      },
+    };
+  }
+
   return {
     head: {
       title: "RakkasJs template",
