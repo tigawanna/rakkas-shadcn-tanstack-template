@@ -30,7 +30,7 @@ export default createRequestHandler({
       },
 
       async extendPageContext(pageContext) {
-        const gh_token = requestContext?.cookie?.gh_tojen_cookie;
+        const gh_token = requestContext?.cookie?.gh_token;
         if (gh_token) {
           try {
             await testGithubToken(gh_token);
