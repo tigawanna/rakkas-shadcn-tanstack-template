@@ -1,24 +1,15 @@
-import {
-  ClientSuspense,
-  LayoutProps,
-  PreloadContext,
-  useLocation,
-} from "rakkasjs";
+import { ClientSuspense, LayoutProps, useLocation } from "rakkasjs";
 import Nprogress from "@/components/navigation/nprogress/Nprogress";
 import "./index.css";
-import { Sidebar } from "@/components/navigation/bars/sidebar";
-// import Toaster from "@/components/wrappers/DefaltExportedToaster";
+import { Sidebar } from "@/components/navigation/bars/Sidebar";
 import ErrorBoundaryComponent from "@/components/navigation/ErrorBoundaryComponent";
 import BreadCrumbs from "@/components/navigation/BreadCrumbs";
 import { Toaster } from "@/components/shadcn/ui/sonner";
-
-
-
+import { SideDrawer } from "@/components/navigation/bars/SideDrawer";
 
 function Layout({ children }: LayoutProps) {
   const location = useLocation();
 
-  // console.log(" page ctx ==== ",page_ctx.locals.pb)
   return (
     <ErrorBoundaryComponent>
       <div className="w-full h-screen  overflow-y-hidden  flex flex-col items-center ">
@@ -28,12 +19,15 @@ function Layout({ children }: LayoutProps) {
           />
         </ClientSuspense>
         <div className="w-full flex  gap-3">
-          <div className="min-w-[5%] w-fit flex h-screen gap-2">
+          <div className="min-w-[5%] w-fit hidden sm:flex h-screen gap-2">
             <Sidebar />
           </div>
-          <div className="w-full    flex flex-col  gap-2 ">
+          <div className="fixed top-[2%] left-[2%] sm:hidden">
+            <SideDrawer />
+          </div>
+          <div className="w-full  flex flex-col  gap-2 ">
             <div className="w-fit flex rounded-xl">
-              <ClientSuspense fallback={<div className="h-8 "></div>}>
+              <ClientSuspense fallback={<div className="h-5 "></div>}>
                 <BreadCrumbs />
               </ClientSuspense>
             </div>
@@ -49,7 +43,5 @@ function Layout({ children }: LayoutProps) {
     </ErrorBoundaryComponent>
   );
 }
-
-
 
 export default Layout;
