@@ -1,30 +1,13 @@
-import { Button } from "@/components/shadcn/ui/button";
-import { Home } from "lucide-react";
-import { PageProps } from "rakkasjs";
-import { toast } from "sonner";
+import { HeroSection } from "@/components/landing/HeroSection";
+import { HeroSection2 } from "@/components/landing/heroSection2";
+
+import { Link, PageProps } from "rakkasjs";
 
 export default function HomePage({}: PageProps) {
   return (
-    <main className="flex items-center justify-center w-full max-h-screen h-full gap-3">
-      <h2 className="text-3xl font-bold">Rakkasjs shadcn template</h2>
-      <Button
-        variant="outline"
-        onClick={() => {
-          toast.success("Event has been created", {
-            description: "Sunday, December 03, 2023 at 9:00 AM",
-
-            action: {
-              label: "Undo",
-              onClick: () => console.log("Undo"),
-            },
-
-            icon: <Home className="" />,
-
-          });
-        }}
-      >
-        Show Toast
-      </Button>
+    <main className="flex items-center justify-center w-full  h-fit gap-3">
+      {/* <HeroSection /> */}
+      <HeroSection2/>
     </main>
   );
 }

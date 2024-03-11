@@ -11,7 +11,7 @@ function Layout({ children }: LayoutProps) {
 
   return (
     <ErrorBoundaryComponent>
-      <div className="w-full h-screen  overflow-y-hidden  flex flex-col items-center ">
+      <div className="w-full h-screen  overflow-y-hidden  flex flex-col items-center justify-center ">
         <ClientSuspense fallback={<div className="h-8 "></div>}>
           <Nprogress
             isAnimating={location && location?.pending ? true : false}
@@ -30,7 +30,7 @@ function Layout({ children }: LayoutProps) {
                 <BreadCrumbs />
               </ClientSuspense>
             </div>
-            <div className="w-full  h-[95vh] md:pl-6 px-1 flex flex-col overflow-y-auto gap-2 ">
+            <div className="w-full  h-[95vh] md:pl-6 px-1 flex flex-col overflow-y-auto gap-2  ">
               <ErrorBoundaryComponent>{children}</ErrorBoundaryComponent>
             </div>
           </div>

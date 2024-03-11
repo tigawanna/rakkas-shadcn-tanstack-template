@@ -8,6 +8,7 @@ export function RoutesList({icontsOnly=true}: RoutesListProps) {
   const routes = [
     { name: "home", url: "/", icon: <Home /> },
     { name: "admin", url: "/admin", icon: <Lock /> },
+    { name: "resume", url: "/dashboard/resume", icon: <Lock /> },
   ];
 
   return (
