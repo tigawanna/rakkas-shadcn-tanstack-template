@@ -10,16 +10,16 @@ export default function HomePage({}: PageProps) {
       <Button
         variant="outline"
         onClick={() => {
-          toast("Event has been created", {
+          toast.success("Event has been created", {
             description: "Sunday, December 03, 2023 at 9:00 AM",
-            type: "warning",
+
             action: {
               label: "Undo",
               onClick: () => console.log("Undo"),
             },
 
             icon: <Home className="" />,
-            position: "top-left",
+
           });
         }}
       >
