@@ -24,7 +24,7 @@ export function RoutesList({icontsOnly=true}: RoutesListProps) {
           >
             {route.icon}
             {icontsOnly ? (
-              <div className="hidden lg:flex text-lg font-bold">
+              <div className="hidden  text-lg font-bold">
                 {route.name}
               </div>
             ) : (

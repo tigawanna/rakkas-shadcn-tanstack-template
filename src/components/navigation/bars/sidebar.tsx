@@ -11,7 +11,7 @@ export function Sidebar({}: SidebarProps) {
     z-30 gap-1 "
     ><div className="w-full h-full flex flex-col justify-between items-center p-2 pb-12 pt-3">
         <SideDrawer />
-        <RoutesList />
+        <RoutesList icontsOnly />
         <MiniSettingsModal />
       </div>
     </nav>

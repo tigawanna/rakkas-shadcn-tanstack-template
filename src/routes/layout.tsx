@@ -1,11 +1,11 @@
 import { ClientSuspense, LayoutProps, useLocation } from "rakkasjs";
 import Nprogress from "@/components/navigation/nprogress/Nprogress";
 import "./index.css";
-import { Sidebar } from "@/components/navigation/bars/Sidebar";
 import ErrorBoundaryComponent from "@/components/navigation/ErrorBoundaryComponent";
 import BreadCrumbs from "@/components/navigation/BreadCrumbs";
 import { Toaster } from "@/components/shadcn/ui/sonner";
 import { SideDrawer } from "@/components/navigation/bars/SideDrawer";
+import { Sidebar } from "@/components/navigation/bars/sidebar";
 
 function Layout({ children }: LayoutProps) {
   const location = useLocation();
