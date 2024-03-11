@@ -7,9 +7,13 @@ import {
 import Nprogress from "@/components/navigation/nprogress/Nprogress";
 import "./index.css";
 import { Sidebar } from "@/components/navigation/bars/sidebar";
-import Toaster from "@/components/wrappers/DefaltExportedToaster";
+// import Toaster from "@/components/wrappers/DefaltExportedToaster";
 import ErrorBoundaryComponent from "@/components/navigation/ErrorBoundaryComponent";
 import BreadCrumbs from "@/components/navigation/BreadCrumbs";
+import { Toaster } from "@/components/shadcn/ui/sonner";
+
+
+
 
 function Layout({ children }: LayoutProps) {
   const location = useLocation();
@@ -18,8 +22,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <ErrorBoundaryComponent>
       <div className="w-full h-screen  overflow-y-hidden  flex flex-col items-center ">
-        {/* <Head description={"Resume building assistant"} /> */}
-        <ClientSuspense fallback={null}>
+        <ClientSuspense fallback={<div className="h-8 "></div>}>
           <Nprogress
             isAnimating={location && location?.pending ? true : false}
           />
@@ -30,7 +33,7 @@ function Layout({ children }: LayoutProps) {
           </div>
           <div className="w-full    flex flex-col  gap-2 ">
             <div className="w-fit flex rounded-xl">
-              <ClientSuspense fallback={null}>
+              <ClientSuspense fallback={<div className="h-8 "></div>}>
                 <BreadCrumbs />
               </ClientSuspense>
             </div>
@@ -39,33 +42,14 @@ function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </div>
-        <ClientSuspense fallback={null}>
-          <Toaster />
+        <ClientSuspense fallback={<div className="h-8 "></div>}>
+          <Toaster richColors />
         </ClientSuspense>
       </div>
     </ErrorBoundaryComponent>
   );
 }
 
-Layout.preload = (ctx: PreloadContext) => {
-  const redirect_to = ctx.queryClient.getQueryData("return_to");
-  if (!(redirect_to == null)) {
-    const new_url = new URL(ctx.url);
-    new_url.pathname = redirect_to;
-    ctx.queryClient.setQueryData("return_to", null);
-    return {
-      redirect: {
-        href: new_url.toString(),
-      },
-    };
-  }
 
-  return {
-    head: {
-      title: "RakkasJs template",
-      description: " Drakkas js template including Rakkasjs and Shadcn UI",
-    },
-  };
-};
 
 export default Layout;
