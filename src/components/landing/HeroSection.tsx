@@ -1,42 +1,44 @@
 import { Link } from "rakkasjs";
+import { Icons } from "../icons/Iconts";
 
 interface HeroSectionProps {}
 
 export function HeroSection({}: HeroSectionProps) {
   return (
-    <div className="w-full  h-screen flex flex-col items-center justify-center text-center relative">
-      <div
-        className="w-full h-screen flex flex-col items-center justify-center absolute z-30 top-0 
-      bottom-0 bg-gradient-to-t from-base-200 to-accent"
-      >
-        ........................... .............................
-        ............................. ...............................
-        ........................
-      </div>
-      <div
-        className="h-fit  p-5 flex flex-col items-center gap-3 justify-center 
-      bg-gradient-to-t from-accent/20 to-base-100 glass rounded-xl shadow z-40"
-      >
-        <h1 className="font-bold tracking-tighter text-6xl">
-          Applicate
-        </h1>
-        <h3 className="text-lg lg:text-3xl  tracking-tighter">
-          Ease into the your next job application
-        </h3>
-        <img
-          src="/svg/typewriter.svg"
-          className="w-1/3 aspect-square text-orange-600"
-        />
-        <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-          Create a stunning resume and cover letter with our easy-to-use builder
-          with automation that leverages your application history to grant you a
-          friction less experience.
-        </p>
+    <div className="w-full min-h-screen  flex flex-col items-center justify-center 
+    bg-gradient-to-bl from-accent/50 to-base-100">
+      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* <!-- Grid --> */}
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+          <div className="flex flex-col gap-2 p-3 ">
+            <h1 className="block font-bold  py-5 text-6xl lg:leading-tight ">
+              Start your journey with{" "}
+              <span className="text-primary">Applicate</span>
+            </h1>
+            <p className="mx-auto max-w-[600px] text-gray-500 text-xl dark:text-gray-400">
+              Create a stunning resume and cover letter with our easy-to-use
+              builder with automation that leverages your application history to
+              grant you a friction less experience.
+            </p>
 
-        <div>
-          <Link className="btn btn-wide text-lg" href="/dashboard">
-            Get Started
-          </Link>
+            {/* <!-- Buttons --> */}
+            <div className="mt-7 gap-3 w-full flex items-center justify-center md:justify-start">
+              <Link className="btn btn-primary btn-wide" href="/dashboard">
+                Get started
+              </Link>
+            </div>
+            {/* <!-- End Buttons --> */}
+          </div>
+          {/* <!-- End Col --> */}
+
+          <div className="relative ms-4">
+            {/* <img
+              className="w-full rounded-md"
+              src="/svg/typewriter.svg"
+              alt="Type writter"
+            /> */}
+            <Icons.typewriter className="w-full h-full fill-primary"/>
+          </div>
         </div>
       </div>
     </div>
