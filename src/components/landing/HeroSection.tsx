@@ -7,7 +7,7 @@ export function HeroSection({}: HeroSectionProps) {
   return (
     <div className="w-full min-h-screen  flex flex-col items-center justify-center 
     bg-gradient-to-bl from-accent/50 to-base-100">
-      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[85rem] mx-auto pt-3 px-4 sm:px-6 lg:px-8">
         {/* <!-- Grid --> */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div className="flex flex-col gap-2 p-3 ">
