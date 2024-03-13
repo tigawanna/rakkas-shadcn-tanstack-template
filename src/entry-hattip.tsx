@@ -29,7 +29,7 @@ export default createRequestHandler({
       },
 
       emitToDocumentHead() {
-        const cookie_theme = requestContext?.cookie?.theme;
+        const cookie_theme = requestContext?.cookie?.theme??"dark";
         return `
     <link rel="icon" type="image/svg+xml" href="/site.svg" />
     <script>
