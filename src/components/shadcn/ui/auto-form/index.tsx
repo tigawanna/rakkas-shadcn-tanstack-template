@@ -1,11 +1,11 @@
 "use client";
-import { Form } from "@/components/ui/form";
+import { Form } from "@/components/shadcn/ui/form";
 import React from "react";
 import { DefaultValues, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/shadcn/ui/button";
+import { cn } from "@/components/shadcn/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import AutoFormObject from "./fields/object";

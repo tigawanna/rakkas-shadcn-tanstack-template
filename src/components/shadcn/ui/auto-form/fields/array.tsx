@@ -2,9 +2,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/shadcn/ui/accordion";
+import { Button } from "@/components/shadcn/ui/button";
+import { Separator } from "@/components/shadcn/ui/separator";
 import { Plus, Trash } from "lucide-react";
 import { useFieldArray, useForm } from "react-hook-form";
 import * as z from "zod";

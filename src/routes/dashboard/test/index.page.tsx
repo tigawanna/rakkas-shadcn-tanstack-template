@@ -1,5 +1,5 @@
-import { PageProps, useQuery, useSSQ } from "rakkasjs";
-import { RestliClient } from "linkedin-api-client";
+import { PageProps} from "rakkasjs";
+
 export default function TestPage({}: PageProps) {
 
 

@@ -1,15 +1,14 @@
 "use client";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+import { cn } from "@/components/shadcn/lib/utils";
+import { Button } from "@/components/shadcn/ui/button";
+import { Calendar } from "@/components/shadcn/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@/components/shadcn/ui/popover";
 import { forwardRef } from "react";
 
 export const DatePicker = forwardRef<

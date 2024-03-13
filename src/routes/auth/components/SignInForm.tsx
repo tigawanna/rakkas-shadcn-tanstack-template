@@ -36,7 +36,7 @@ export function SignInForm({}: SignInFormProps) {
     (vars: { usernameOrEmail: string; password: string }) => {
       return emailPasswordLogin({
         pb: page_ctx.locals.pb,
-        collection: "shamiri_users",
+        collection: "applicate_users",
         identity: vars.usernameOrEmail,
         password: vars.password,
       });
@@ -44,10 +44,8 @@ export function SignInForm({}: SignInFormProps) {
     {
       invalidateTags: ["viewer"],
       onError(error: any) {
-        hotToast({
-          title: "Something went wrong",
+        toast.error("Something went wrong", {
           description: error?.message,
-          type: "error",
         });
       },
       onSuccess(data) {
@@ -73,7 +71,7 @@ export function SignInForm({}: SignInFormProps) {
       return resetPassword({
         pb: page_ctx.locals.pb,
         email: vars.email,
-        collection: "shamiri_users",
+        collection: "applicate_users",
       });
     },
     {
@@ -177,8 +175,7 @@ export function SignInForm({}: SignInFormProps) {
           onClick={() =>
             pw_reset_request_mutation.mutate({
               email: input.usernameOrEmail,
-            })
-          }
+            })}
         >
           <h3>Forgot password</h3>
           <Unlock className="h-4 w-4 text-red-600" />

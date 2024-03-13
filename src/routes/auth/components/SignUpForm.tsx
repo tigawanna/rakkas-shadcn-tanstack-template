@@ -32,18 +32,17 @@ export function SignUpForm({}: SignupFormProps) {
     (vars: typeof input) => {
       return createUser({
         pb: page_ctx.locals.pb,
-        collection: "shamiri_users",
+        collection:"applicate_users",
         data: vars,
       });
     },
     {
       invalidateTags: ["viewer"],
       onError(error: any) {
-        hotToast({
-          title: "Something went wrong",
+
+        toast.error("Something went wrong", {
           description: error?.message,
-          type: "error",
-        });
+        })
       },
       onSuccess(data) {
         if (data && data?.data) {

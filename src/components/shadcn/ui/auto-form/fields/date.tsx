@@ -1,5 +1,5 @@
-import { DatePicker } from "@/components/ui/date-picker";
-import { FormControl, FormItem, FormMessage } from "@/components/ui/form";
+import { DatePicker } from "@/components/shadcn/ui/date-picker";
+import { FormControl, FormItem, FormMessage } from "@/components/shadcn/ui/form";
 import AutoFormLabel from "../common/label";
 import AutoFormTooltip from "../common/tooltip";
 import { AutoFormInputComponentProps } from "../types";

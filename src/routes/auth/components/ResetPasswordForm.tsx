@@ -34,7 +34,7 @@ export function PasswordResetForm({}: PasswordResetFormProps) {
       return resetPassword({
         pb: page_ctx.locals.pb,
         email: vars.email,
-        collection: "shamiri_users",
+        collection: "applicate_users",
       });
     },
     {
@@ -63,7 +63,7 @@ export function PasswordResetForm({}: PasswordResetFormProps) {
     (vars: typeof input) => {
       return confirmResetPassword({
         pb: page_ctx.locals.pb,
-        collection: "shamiri_users",
+        collection: "applicate_users",
         token: vars.token,
         password: vars.password,
         passwordConfirm: vars.passwordConfirm,

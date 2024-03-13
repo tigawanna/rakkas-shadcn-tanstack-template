@@ -1,11 +1,11 @@
-import { FormControl, FormItem, FormMessage } from "@/components/ui/form";
+import { FormControl, FormItem, FormMessage } from "@/components/shadcn/ui/form";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/shadcn/ui/select";
 import * as z from "zod";
 import AutoFormLabel from "../common/label";
 import AutoFormTooltip from "../common/tooltip";
