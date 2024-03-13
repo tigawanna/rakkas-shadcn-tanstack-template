@@ -8,7 +8,7 @@ export function Toolbar({}: ToolbarProps) {
   const routes = [
     { name: "Home", path: "/" },
     { name: "Sign in", path: "/auth" },
-    { name: "Sign up", path: "/auth/signup" },
+    { name: "dashboard", path: "/dashboard" },
   ];
   return (
     <div className="glass sticky top-0 flex h-8 w-full items-center justify-between bg-inherit">

@@ -175,13 +175,13 @@ export async function oneClickOauthLogin<T extends CollectionName>({
       .collection(collection)
       .authWithOAuth2<RecordManualTypes>(oauth_config);
 
-    // console.log(" ===== oneClickOauthLogin ====== ", authData);
+    console.log(" ===== oneClickOauthLogin ====== ", authData);
 
     const updated_user = await pb
       .collection(collection)
       .update(authData.record.id, {
         accessToken: authData?.meta?.accessToken,
-        avataUrl: authData?.meta?.avatarUrl,
+        avatar: authData?.meta?.avatarUrl,
       });
     document.cookie = pb.authStore.exportToCookie({ httpOnly: false });
     return updated_user;

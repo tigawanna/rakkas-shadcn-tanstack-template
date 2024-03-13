@@ -17,7 +17,7 @@ export default function ErrorBoundaryComponent({
         resetErrorBoundary: () => void;
       }) => {
         return (
-          <div className="w-full h-full min-h-[80vh]  flex flex-col gap-5 justify-center items-center">
+          <div className="w-full min-h-screen  flex flex-col gap-5 justify-center items-center">
             <h1 className="text-2xl text-error">Something went wrong</h1>
 
             <p className="p-5 text-error bg-error/10 rounded-lg">
