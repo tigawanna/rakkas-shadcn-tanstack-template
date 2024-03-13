@@ -4,7 +4,7 @@ interface ThemeSwitcherProps {
 
 export function ThemeSwitcher({}:ThemeSwitcherProps){
 return (
-  <label className="swap swap-rotate fixed top-[2%] right-[3%] ">
+  <label className="swap swap-rotate hover:text-secondary ">
     {/* this hidden checkbox controls the state */}
     <input type="checkbox" className="theme-controller" value="light" />
 

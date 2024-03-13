@@ -6,6 +6,7 @@ export function pageGuard(ctx:PageRouteGuardContext): LookupHookResult {
   if (!user) {
     return true;
   } else {
+    return true
     return {
       redirect: ctx.url.origin,
     };

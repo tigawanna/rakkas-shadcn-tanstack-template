@@ -926,6 +926,37 @@ export interface ShamiriUsersCollection {
 	};
 }
 
+// ===== applicate_users =====
+
+export interface ApplicateUsersResponse extends AuthCollectionResponse {
+	collectionName: 'applicate_users';
+	linkedinAccessToken: string;
+	bio: string;
+	avatar: string;
+}
+
+export interface ApplicateUsersCreate extends AuthCollectionCreate {
+	linkedinAccessToken?: string;
+	bio?: string;
+	avatar?: string | URL;
+}
+
+export interface ApplicateUsersUpdate extends AuthCollectionUpdate {
+	linkedinAccessToken?: string;
+	bio?: string;
+	avatar?: string | URL;
+}
+
+export interface ApplicateUsersCollection {
+	type: 'auth';
+	collectionId: string;
+	collectionName: 'applicate_users';
+	response: ApplicateUsersResponse;
+	create: ApplicateUsersCreate;
+	update: ApplicateUsersUpdate;
+	relations: Record<string, never>;
+}
+
 // ===== Schema =====
 
 export type Schema = {
@@ -948,4 +979,5 @@ export type Schema = {
 	// github_oauth: GithubOauthCollection;
 	// shamiri_rick_and_morty_notes: ShamiriRickAndMortyNotesCollection;
 	// shamiri_users: ShamiriUsersCollection;
+	applicate_users: ApplicateUsersCollection;
 };

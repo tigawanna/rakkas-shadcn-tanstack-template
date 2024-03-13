@@ -1,22 +1,14 @@
 import { TypedPocketBase } from "typed-pocketbase";
 import { Schema } from "src/lib/pb/db-types";
+import { PocketBaseClient } from "@/lib/pb/client";
 
 declare module "rakkasjs" {
-    interface PageLocals {
-        /** My application-specific stuff */
-   pb: TypedPocketBase<Schema>;
-    }
-    interface ServerSideLocals {
-        /** My application-specific stuff */
-       pb: TypedPocketBase<Schema>;
-    }
+  interface PageLocals {
+    pb: PocketBaseClient
+  }
+  interface ServerSideLocals {
+    pb: TPocketBaseClient;
+  }
 }
 
 
-declare interface ReturnedError {
-    error: {
-        message: string;
-        original_error: string,
-
-    }
-}

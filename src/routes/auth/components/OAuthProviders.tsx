@@ -4,6 +4,7 @@ import {
   useLocation,
   useMutation,
   usePageContext,
+  useQuery,
   useQueryClient,
 } from "rakkasjs";
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -18,13 +19,16 @@ export function OAuthproviders({}: OAuthprovidersProps) {
   const qc = useQueryClient();
   const { locals } = usePageContext();
   const { current } = useLocation();
-
+  const query = useQuery("/providers",()=>{
+    return locals.pb.from("applicate_users").listAuthMethods()
+  })
+  console.log(" ==== auth methods   ==== ",query.data)
   const mutation = useMutation(
     ({ provider }: { provider: "github" | "google" }) => {
       return tryCatchWrapper(
         oneClickOauthLogin({
           pb: locals.pb,
-          collection: "shamiri_users",
+          collection: "applicate_users",
           oauth_config: {
             provider,
           },
