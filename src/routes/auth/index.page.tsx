@@ -1,8 +1,11 @@
-import { PageProps } from "rakkasjs"
-import { GithubLoginButton } from "./components/GithubLoginButton"
-export default function Page({}:PageProps) {
-return (
-<div className="w-full h-full min-h-screen flex items-center justify-center">
-<GithubLoginButton/>
-</div>
-)}
+import { SignInForm } from "./components/SignInForm";
+import { PageProps, Head } from "rakkasjs";
+
+export default function SignInPage({}: PageProps) {
+  return (
+    <div className="w-full h-fit flex items-center justify-center">
+      <Head title="Sign in" description={"Sign in to your account"} />
+      <SignInForm />
+    </div>
+  );
+}

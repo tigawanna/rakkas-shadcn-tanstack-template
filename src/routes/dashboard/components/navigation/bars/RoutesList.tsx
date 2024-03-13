@@ -1,5 +1,5 @@
 import { Link } from "rakkasjs";
-import { Home, Lock } from "lucide-react";
+import { Home, Lock, TestTube2 } from "lucide-react";
 interface RoutesListProps {
   icontsOnly?: boolean;
 }
@@ -9,6 +9,7 @@ export function RoutesList({icontsOnly=true}: RoutesListProps) {
     { name: "home", url: "/", icon: <Home /> },
     { name: "admin", url: "/admin", icon: <Lock /> },
     { name: "resume", url: "/dashboard/resume", icon: <Lock /> },
+    { name: "test", url: "/dashboard/test", icon: <TestTube2 /> },
   ];
 
   return (
