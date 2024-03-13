@@ -11,9 +11,9 @@ export function Toolbar({}: ToolbarProps) {
     { name: "Sign up", path: "/auth/signup" },
   ];
   return (
-    <div className="w-full flex justify-between items-center bg-inherit glass sticky top-0 h-8">
-      <h1 className="text-3xl p-2"> Applicate</h1>
-      <div className="hidden md:flex gap-2 justify-end items-center px-2">
+    <div className="glass sticky top-0 flex h-8 w-full items-center justify-between bg-inherit">
+      <Link href="/" className="p-2 text-3xl"> Applicate</Link>
+      <div className="hidden items-center justify-end gap-2 px-2 md:flex">
         <ul className="flex flex-wrap items-center gap-2 divide-x-2">
           {routes.map((route) => (
             <li key={route.path} className="p-2 hover:text-secondary">
@@ -25,15 +25,15 @@ export function Toolbar({}: ToolbarProps) {
       </div>
       {/* sidebar */}
 
-      <div className="p-2 md:hidden relative w-full flex justify-end">
-        <input type="checkbox" className="hidden peer " id="sidebar-toggle" />
-        <label htmlFor="sidebar-toggle" className="p-2 md:hidden z-40">
+      <div className="relative flex w-full justify-end p-2 md:hidden">
+        <input type="checkbox" className="peer hidden " id="sidebar-toggle" />
+        <label htmlFor="sidebar-toggle" className="z-40 p-2 md:hidden">
           <Menu />
         </label>
         <div
-          className="p-2 gap-2 rounded-lg hidden peer-checked:flex animate-in slide-in-from-top duration-500 
-         flex-col justify-center items-center absolute top-10 right-0 w-fit min-w-[250px] 
-        bg-base-100/50 glass"
+          className="glass absolute right-0 top-10 hidden w-fit min-w-[250px] flex-col 
+         items-center justify-center gap-2 rounded-lg bg-base-100/50 p-2 duration-500 animate-in 
+        slide-in-from-top peer-checked:flex"
         >
           <ul className="flex flex-col items-center gap-2 divide-y-2">
             {routes.map((route) => (
