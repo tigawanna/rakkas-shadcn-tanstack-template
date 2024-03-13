@@ -3,7 +3,7 @@ import rakkas from "rakkasjs/vite-plugin";
 import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 import analyze from "rollup-plugin-analyzer";
-import { rakkasTanstackQuery } from "@/lib/plugin/vite-plugin";
+import { rakkasTanstackQuery } from "./src/lib/plugin/vite-plugin";
 
 const env = loadEnv("", process.cwd(), "");
 Object.assign(process.env, env);
