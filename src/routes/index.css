@@ -73,14 +73,17 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   :root {
+
     --popover: theme(colors.base-200);
     --popover-foreground: theme(colors.base-content);
 
     --background: theme(colors.base-100);
     --foreground: theme(colors.base-content);
 
-    --muted: theme(colors.base-100);
-    --muted-foreground: theme(colors.base-content);
+    --backeground-darker: theme(colors.base-300);
+    --muted: theme(colors.base-200);
+
+    --muted-foreground: theme(colors.base-200);
 
     --border: theme(colors.base-300);
     --input: theme(colors.base-300);
@@ -111,8 +114,10 @@ p, h1, h2, h3, h4, h5, h6 {
     --background: theme(colors.base-100);
     --foreground: theme(colors.base-content);
 
+    --backeground-darker: theme(colors.base-300);
     --muted: theme(colors.base-100);
-    --muted-foreground: theme(colors.base-content);
+
+    --muted-foreground: theme(colors.base-200);
 
     --border: theme(colors.base-300);
     --input: theme(colors.base-300);

@@ -30,11 +30,11 @@ export function ThemeToggle({}: ThemeToggleModalProps) {
   const [theme, setTheme] = useState<string>(""); // Step 1: Create state variable for theme
   useEffect(() => {
     // Step 2: Run code on first mount
-    console.log("initialTheme on client outside use effect window check  ====== ", theme)
+    // console.log("initialTheme on client outside use effect window check  ====== ", theme)
     if (typeof window !== undefined) {
       const initialTheme =
         document?.documentElement?.getAttribute("data-theme"); // Step 4: Retrieve initial theme
-        console.log("initialTheme on client  ====== ", initialTheme)
+        // console.log("initialTheme on client  ====== ", initialTheme)
       setTheme(initialTheme ?? ""); // Step 5: Update state variable with initial theme
     }
   }, []);
