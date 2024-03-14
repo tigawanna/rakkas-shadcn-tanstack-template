@@ -4,8 +4,6 @@ import { RequestContext } from "rakkasjs";
 import { TypedPocketBase } from "typed-pocketbase";
 import { Schema } from "@/lib/pb/database";
 
-
-
 function pocketbaseMiddleware(ctx: RequestContext) {
   ctx.locals.pb = new TypedPocketBase<Schema>(import.meta.env.RAKKAS_PB_URL);
   // load the store data from the request cookie string
@@ -29,12 +27,13 @@ export default createRequestHandler({
       },
 
       emitToDocumentHead() {
-        const cookie_theme = requestContext?.cookie?.theme??"dark";
+        const cookie_theme = requestContext?.cookie?.theme ?? "dark";
+        // console.log("cookieTheme on the server  ====== ", cookie_theme);
         return `
     <link rel="icon" type="image/svg+xml" href="/site.svg" />
     <script>
       (function() {
-        document.documentElement.setAttribute("data-theme", "${cookie_theme}");
+        document.documentElement.setAttribute("data-theme","${cookie_theme}");
       })();
      </script>
    
