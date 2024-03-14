@@ -26,7 +26,7 @@ export function HeroSection({}: HeroSectionProps) {
 
             {/* <!-- Buttons --> */}
             <div className="mt-7 gap-3 w-full flex items-center justify-center md:justify-start">
-              <Link className="btn btn-primary btn-wide" href="/dashboard">
+              <Link className="btn btn-primary text-primary-content btn-wide " href="/dashboard">
                 Get started
               </Link>
             </div>

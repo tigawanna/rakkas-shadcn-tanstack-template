@@ -16,10 +16,10 @@ export default {
         light: {
           primary: "#126468",
           "primary-focus": "#08383a",
-          "primary-content": "#ffffff",
+          "primary-content": "#f3f1f1",
 
-          secondary: "#514c94",
-          "secondary-focus": "#4a62c4",
+          secondary: "#6dc106",
+          "secondary-focus": "#37ac0c",
           "secondary-content": "#ffffff",
 
           accent: "#856832",
@@ -28,12 +28,12 @@ export default {
 
           neutral: "#261230",
           "neutral-focus": "#320a48",
-          "neutral-content": "#ffffff",
+          "base-content": "#f7eefc",
 
-          "base-100": "#faf7f5",
-          "base-200": "#efeae6",
-          "base-300": "#e7e2df",
-          "base-content": "#261230",
+          "base-100": "#ffffff",
+          "base-200": "#f8f4ef",
+          "base-300": "#d8cfc3",
+          "base-content": "#000000",
 
           info: "#1c92f2",
           success: "#009485",
@@ -54,10 +54,10 @@ export default {
         dark: {
           primary: "#17565e",
           "primary-focus": "#18969a",
-          "primary-content": "#000000",
+          "primary-content": "#f3f1f1",
 
-          secondary: "#514c94",
-          "secondary-focus": "#4a62c4",
+          secondary: "#6dc106",
+          "secondary-focus": "#37ac0c",
           "secondary-content": "#000000",
 
           accent: "#856832",

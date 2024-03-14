@@ -5,9 +5,9 @@ import {useEffect } from "react";
 
 function Layout({ children }: LayoutProps) {
 
-useEffect(()=>{
-  document.documentElement.setAttribute("data-theme", `deez-nuts`);
-},[])
+// useEffect(()=>{
+//   document.documentElement.setAttribute("data-theme", `deez-nuts`);
+// },[])
   return (
     <ErrorBoundaryComponent>
       <div className="flex h-full w-full  flex-col items-center justify-center bg-base-200 ">
