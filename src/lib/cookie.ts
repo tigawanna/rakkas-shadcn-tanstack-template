@@ -1,7 +1,7 @@
 import { RequestContext } from "rakkasjs";
 
 export function setGHPATCookie(ctx: RequestContext<unknown>, value: string) {
-    ctx?.setCookie("gh_tojen_cookie", value, {
+    ctx?.setCookie("gh_token_cookie", value, {
         path: "/",
         secure: import.meta.env.PROD,
         httpOnly: false,

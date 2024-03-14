@@ -27,7 +27,7 @@ export default createRequestHandler({
       },
 
       emitToDocumentHead() {
-        const cookie_theme = requestContext?.cookie?.theme ?? "light";
+        const cookie_theme = requestContext?.cookie?.theme ?? "dark";
         // console.log("cookieTheme on the server  ====== ", cookie_theme);
         return `
     <link rel="icon" type="image/svg+xml" href="/site.svg" />

@@ -2,11 +2,11 @@ import { Button } from "@/components/shadcn/ui/button";
 import { Home } from "lucide-react";
 import { PageProps } from "rakkasjs"
 import { toast } from "sonner";
-export default function Page({}:PageProps) {
+export default function DashboardPage({}:PageProps) {
 return (
   <div className="w-full h-full  flex flex-col items-center justify-center">
     <h2 className="text-3xl font-bold">Rakkasjs shadcn template</h2>
-    <div className="h-52 w-[50%] bg-base-100">hello</div>
+  
     <Button
       variant="outline"
       onClick={() => {
